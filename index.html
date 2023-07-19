@@ -7,10 +7,30 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="purchase-input">
-        <label>
-            
-        </label>
+    <div class="container">
+        <div class="purchase-info">
+            <label for="intetion">What is the Purchase in question?</label>
+            <select name="intention" id="intention" class="dropdown">
+                <option value="home">Home</option>
+                <option value="food">Food</option>
+                <option value="groceries">Groceries</option>
+                <option value="tax">Taxes</option>
+            </select>
+            <label for="intetion">What was the amount paid?</label>
+            <input type="text" placeholder="Amount paid" class="text-box" id="amount">
+            <button id="add-btn">Add Invoice</button>
+        </div>
+        <div class="cards" id="cards">
+            <div class="card">
+                <img src="assets/home.jpeg" alt="home" class="img-card">
+                <div>
+                    <p>This invoice was for: home</p>
+                </div>
+                <div>
+                    <p>the amount paid was: 5$</p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
