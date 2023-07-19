@@ -17,7 +17,6 @@
                 <option value="groceries">Groceries</option>
                 <option value="tax">Taxes</option>
             </select>
-            <label for="intetion">What was the amount paid?</label>
             <input type="number" placeholder="Amount paid" class="text-box" id="amount">
             <button id="add-btn">Add Invoice</button>
             <label>Amount spent on home (in $):</label>
@@ -31,7 +30,12 @@
             <label>Total Amount spent (in $):</label>
             <label id="total-spending">0</label>
         </div>
-        <div class="cards" id="cards">
+        <div class="rows" id="rows">
+            <div class="row">
+                <label>Name</label>
+                <label>Price</label>
+                <label>Remove Button</label>
+            </div>
         </div>
     </div>
     <script src="/js/addCard.js"></script>

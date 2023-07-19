@@ -1,12 +1,12 @@
 
-function purchaseCardElement(aspect, amount) {
+function purchaseRowElement(aspect, amount) {
   console.log(amount+' is the amount');
-  return "<div class='card'>\n<img src='assets/"+ aspect +".jpeg' alt="+ aspect +" class='img-card'>\n<div>\n<p>\nThis invoice was for: " + aspect +" $</p></div> <div> <p>the amount paid was: </p><lable class='current-amount'>" + amount +" $</label></div><span class='remove'>&#128465</span></div>"
+  return "<div class='row'><label>"+ aspect +"</label><label class='current-amount'>"+ amount +"</label><span class='remove'>&#128465</span></div>"
 
 }
   
   
-  function addPurchaseCard() {
+  function addPurchaseRow() {
     const amountInput = $("#amount");
     const intentionSelect = $("#intention");
 
@@ -16,9 +16,9 @@ function purchaseCardElement(aspect, amount) {
     const taxSpendings = $("#tax-spending");
     const totalSpendings = $("#total-spending");
   
-    const purchaseCard = $(purchaseCardElement(intentionSelect.find(":selected").val(),amountInput.val()))
+    const purchaseRow = $(purchaseRowElement(intentionSelect.find(":selected").val(),amountInput.val()))
 
-    const cards = $('#cards')
+    const rows = $('#rows')
 
 
     if (amountInput.val() != 0) {
@@ -35,30 +35,30 @@ function purchaseCardElement(aspect, amount) {
         groceriesSpendings.text(parseInt(groceriesSpendings.text()) + parseInt(amountInput.val()))
       }
       totalSpendings.text(parseInt(totalSpendings.text()) + parseInt(amountInput.val()))
-      cards.append(purchaseCard)
+      rows.append(purchaseRow)
       amountInput.val("")
     }
     
-    purchaseCard.find(".remove").click(function () {
-      console.log(purchaseCard);
+    purchaseRow.find(".remove").click(function () {
+      console.log(purchaseRow);
       if ($("#intention").find(":selected").val() == 'home') {
-        $("#home-spending").text(parseInt($("#home-spending").text()) - parseInt(purchaseCard.find(".current-amount").text()))
-        $("#total-spending").text(parseInt($("#total-spending").text()) - parseInt(purchaseCard.find(".current-amount").text()))
+        $("#home-spending").text(parseInt($("#home-spending").text()) - parseInt(purchaseRow.find(".current-amount").text()))
+        $("#total-spending").text(parseInt($("#total-spending").text()) - parseInt(purchaseRow.find(".current-amount").text()))
 
       }
       if (intentionSelect.find(":selected").val() == 'food') {
-        $("#food-spending").text(parseInt($("#food-spending").text()) - parseInt(purchaseCard.find(".current-amount").text()))
-        $("#total-spending").text(parseInt($("#total-spending").text()) - parseInt(purchaseCard.find(".current-amount").text()))
+        $("#food-spending").text(parseInt($("#food-spending").text()) - parseInt(purchaseRow.find(".current-amount").text()))
+        $("#total-spending").text(parseInt($("#total-spending").text()) - parseInt(purchaseRow.find(".current-amount").text()))
       }
       if (intentionSelect.find(":selected").val() == 'tax') {
-        $("#tax-spending").text(parseInt($("#tax-spending").text()) - parseInt(purchaseCard.find(".current-amount").text()))
-        $("#total-spending").text(parseInt($("#total-spending").text()) - parseInt(purchaseCard.find(".current-amount").text()))
+        $("#tax-spending").text(parseInt($("#tax-spending").text()) - parseInt(purchaseRow.find(".current-amount").text()))
+        $("#total-spending").text(parseInt($("#total-spending").text()) - parseInt(purchaseRow.find(".current-amount").text()))
       }
       if (intentionSelect.find(":selected").val() == 'groceries') {
-        $("#groceries-spending").text(parseInt($("#groceries-spending").text()) - parseInt(purchaseCard.find(".current-amount").text()))
-        $("#total-spending").text(parseInt($("#total-spending").text()) - parseInt(purchaseCard.find(".current-amount").text()))
+        $("#groceries-spending").text(parseInt($("#groceries-spending").text()) - parseInt(purchaseRow.find(".current-amount").text()))
+        $("#total-spending").text(parseInt($("#total-spending").text()) - parseInt(purchaseRow.find(".current-amount").text()))
       }
-      purchaseCard.remove();
+      purchaseRow.remove();
     })
   }
   
@@ -67,10 +67,10 @@ function purchaseCardElement(aspect, amount) {
     
     // add item
     console.log($("#amount").val());
-    addButton.click(addPurchaseCard);
+    addButton.click(addPurchaseRow);
     $("#amountInput").keyup(function (event) {
       if (event.keyCode === 13) {
-        addPurchaseCard()
+        addPurchaseRow()
       }
     })
   })

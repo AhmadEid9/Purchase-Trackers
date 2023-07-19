@@ -15,47 +15,52 @@ html, body{
     display: flex;
     flex-direction: column;
 
-    height: auto;
+    height: 100vh;
     width: 20vw;
 
-    gap: 10px;
+    gap: 8px;
 
     padding: 3%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .dropdown{
-    width: 10vw;
+    width: 15vw;
     cursor: pointer;
 }
 
 .text-box{
-    width: 10vw;
+    width: 15vw;
     background-color: rgb(224, 224, 224);
 }
-
-.img-card{
-    height: 40%;
-    width: 80%;
-}
-.card{
+.row{
     display: flex;
-    flex-direction: column;
-
-    gap: 5px;
+    justify-content: space-between;
+    gap: 0px;
     padding: 3%;
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-    width: 15vw;
-    height: 40%;
+    width: 50vw;
 }
 
-.cards{
+.head{
     display: flex;
-    flex-wrap: wrap;
+}
 
-    width: 100vw;
+.rows{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    width: 70%;
 
     gap: 10px;
+}
+
+.counter-info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
