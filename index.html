@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -17,20 +18,12 @@
                 <option value="tax">Taxes</option>
             </select>
             <label for="intetion">What was the amount paid?</label>
-            <input type="text" placeholder="Amount paid" class="text-box" id="amount">
+            <input type="number" placeholder="Amount paid" class="text-box" id="amount">
             <button id="add-btn">Add Invoice</button>
         </div>
         <div class="cards" id="cards">
-            <div class="card">
-                <img src="assets/home.jpeg" alt="home" class="img-card">
-                <div>
-                    <p>This invoice was for: home</p>
-                </div>
-                <div>
-                    <p>the amount paid was: 5$</p>
-                </div>
-            </div>
         </div>
     </div>
+    <script src="/js/addCard.js"></script>
 </body>
 </html>

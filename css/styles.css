@@ -24,13 +24,6 @@ html, body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    
-    gap: 10;
-}
-
 .dropdown{
     width: 10vw;
     cursor: pointer;
@@ -42,7 +35,7 @@ html, body{
 }
 
 .img-card{
-    height: 20%;
+    height: 40%;
     width: 80%;
 }
 .card{
@@ -55,4 +48,12 @@ html, body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     width: 15vw;
+    height: 40%;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
 }
