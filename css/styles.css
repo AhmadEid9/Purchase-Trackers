@@ -15,7 +15,7 @@ html, body{
     display: flex;
     flex-direction: column;
 
-    height: 30%;
+    height: auto;
     width: 20vw;
 
     gap: 10px;
